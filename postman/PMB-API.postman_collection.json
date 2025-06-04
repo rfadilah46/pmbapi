@@ -1,0 +1,679 @@
+{
+    "info": {
+        "name": "PMB-API",
+        "description": "API Collection for Student Admission System",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Authentication",
+            "item": [
+                {
+                    "name": "Register",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"John Doe\",\n    \"email\": \"john@example.com\",\n    \"password\": \"password123\",\n    \"password_confirmation\": \"password123\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/v1/register",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "v1", "register"]
+                        }
+                    }
+                },
+                {
+                    "name": "Login",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"email\": \"john@example.com\",\n    \"password\": \"password123\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/v1/login",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "v1", "login"]
+                        }
+                    }
+                },
+                {
+                    "name": "Logout",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/v1/logout",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "v1", "logout"]
+                        }
+                    }
+                },
+                {
+                    "name": "Profile",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/v1/profile",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "v1", "profile"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Mahasiswa",
+            "item": [
+                {
+                    "name": "Submit Formulir",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "nama",
+                                    "value": "John Doe",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "nik",
+                                    "value": "1234567890123456",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "tanggal_lahir",
+                                    "value": "2000-01-01",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "tempat_lahir",
+                                    "value": "Jakarta",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "alamat",
+                                    "value": "Jl. Example No. 123",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "no_hp",
+                                    "value": "081234567890",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "email",
+                                    "value": "john@example.com",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "nama_ayah",
+                                    "value": "John Doe Sr",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "nama_ibu",
+                                    "value": "Jane Doe",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "pekerjaan_ayah",
+                                    "value": "Karyawan Swasta",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "pekerjaan_ibu",
+                                    "value": "Ibu Rumah Tangga",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "nik_ayah",
+                                    "value": "1234567890123456",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "nik_ibu",
+                                    "value": "1234567890123456",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "no_hp_ortu",
+                                    "value": "081234567890",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "asal_sekolah",
+                                    "value": "SMA Example",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "tahun_lulus",
+                                    "value": "2023",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "nilai_ijazah",
+                                    "value": "85.5",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "program_studi_id",
+                                    "value": "1",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "tahun_ajaran_id",
+                                    "value": "1",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "pas_foto",
+                                    "type": "file",
+                                    "src": []
+                                },
+                                {
+                                    "key": "scan_ktp",
+                                    "type": "file",
+                                    "src": []
+                                },
+                                {
+                                    "key": "scan_ijazah",
+                                    "type": "file",
+                                    "src": []
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/v1/formulir",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "v1", "formulir"]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Formulir",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/v1/formulir",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "v1", "formulir"]
+                        }
+                    }
+                },
+                {
+                    "name": "Upload Bukti Bayar",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "bukti_pembayaran",
+                                    "type": "file",
+                                    "src": []
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/v1/formulir/upload-bukti-bayar",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "v1", "formulir", "upload-bukti-bayar"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Admin",
+            "item": [
+                {
+                    "name": "Pendaftar",
+                    "item": [
+                        {
+                            "name": "List Pendaftar",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "Authorization",
+                                        "value": "Bearer {{token}}",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_url}}/api/v1/admin/pendaftar",
+                                    "host": ["{{base_url}}"],
+                                    "path": ["api", "v1", "admin", "pendaftar"],
+                                    "query": [
+                                        {
+                                            "key": "tahun_ajaran_id",
+                                            "value": "1",
+                                            "disabled": true
+                                        },
+                                        {
+                                            "key": "program_studi_id",
+                                            "value": "1",
+                                            "disabled": true
+                                        },
+                                        {
+                                            "key": "status_verifikasi",
+                                            "value": "pending",
+                                            "disabled": true
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Detail Pendaftar",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "Authorization",
+                                        "value": "Bearer {{token}}",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_url}}/api/v1/admin/pendaftar/:id",
+                                    "host": ["{{base_url}}"],
+                                    "path": ["api", "v1", "admin", "pendaftar", ":id"],
+                                    "variable": [
+                                        {
+                                            "key": "id",
+                                            "value": "1"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Verifikasi Pendaftar",
+                            "request": {
+                                "method": "PATCH",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "Authorization",
+                                        "value": "Bearer {{token}}",
+                                        "type": "text"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"status_verifikasi\": \"verified\",\n    \"catatan_verifikasi\": null\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/api/v1/admin/pendaftar/:id/verifikasi",
+                                    "host": ["{{base_url}}"],
+                                    "path": ["api", "v1", "admin", "pendaftar", ":id", "verifikasi"],
+                                    "variable": [
+                                        {
+                                            "key": "id",
+                                            "value": "1"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Program Studi",
+                    "item": [
+                        {
+                            "name": "List Program Studi",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "Authorization",
+                                        "value": "Bearer {{token}}",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_url}}/api/v1/admin/prodi",
+                                    "host": ["{{base_url}}"],
+                                    "path": ["api", "v1", "admin", "prodi"]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Create Program Studi",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "Authorization",
+                                        "value": "Bearer {{token}}",
+                                        "type": "text"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"nama\": \"Teknik Informatika\",\n    \"deskripsi\": \"Program studi yang mempelajari tentang teknologi komputer\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/api/v1/admin/prodi",
+                                    "host": ["{{base_url}}"],
+                                    "path": ["api", "v1", "admin", "prodi"]
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Tahun Ajaran",
+                    "item": [
+                        {
+                            "name": "List Tahun Ajaran",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "Authorization",
+                                        "value": "Bearer {{token}}",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_url}}/api/v1/admin/tahun-ajaran",
+                                    "host": ["{{base_url}}"],
+                                    "path": ["api", "v1", "admin", "tahun-ajaran"]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Create Tahun Ajaran",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "Authorization",
+                                        "value": "Bearer {{token}}",
+                                        "type": "text"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"tahun\": \"2024\",\n    \"semester\": \"Ganjil\",\n    \"aktif\": true\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/api/v1/admin/tahun-ajaran",
+                                    "host": ["{{base_url}}"],
+                                    "path": ["api", "v1", "admin", "tahun-ajaran"]
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Biaya Pendaftaran",
+                    "item": [
+                        {
+                            "name": "List Biaya",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "Authorization",
+                                        "value": "Bearer {{token}}",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_url}}/api/v1/admin/biaya",
+                                    "host": ["{{base_url}}"],
+                                    "path": ["api", "v1", "admin", "biaya"]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Create Biaya",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "Authorization",
+                                        "value": "Bearer {{token}}",
+                                        "type": "text"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"nominal\": 150000,\n    \"deskripsi\": \"Biaya pendaftaran mahasiswa baru\",\n    \"aktif\": true\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/api/v1/admin/biaya",
+                                    "host": ["{{base_url}}"],
+                                    "path": ["api", "v1", "admin", "biaya"]
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Public",
+            "item": [
+                {
+                    "name": "Available Program Studi",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/v1/prodi/available",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "v1", "prodi", "available"]
+                        }
+                    }
+                },
+                {
+                    "name": "Current Biaya Pendaftaran",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/v1/biaya/current",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "v1", "biaya", "current"]
+                        }
+                    }
+                },
+                {
+                    "name": "Published Pengumuman",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/v1/pengumuman/published",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "v1", "pengumuman", "published"]
+                        }
+                    }
+                }
+            ]
+        }
+    ],
+    "variable": [
+        {
+            "key": "base_url",
+            "value": "http://localhost:8000"
+        },
+        {
+            "key": "token",
+            "value": "your_jwt_token_here"
+        }
+    ]
+}
